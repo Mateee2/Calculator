@@ -1,0 +1,190 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #6D5BBA, #8D58BF);
+    --btn-bg: rgba(255, 255, 255, 0.15);
+    --btn-hover-bg: rgba(255, 255, 255, 0.3);
+    --btn-equals-bg: #FF5722;
+    --btn-equals-hover: #FF7849;
+    --text-color: #fff;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--bg-gradient);
+    transition: background 0.3s ease;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+  
+  /* Text in the top-left corner */
+  .greeting-text {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    font-weight: bold;
+    z-index: 1000;
+  }
+  
+  .theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .theme-toggle select {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    background-color: var(--btn-equals-bg);
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .calculator {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+  }
+  
+  #display {
+    width: 100%;  /* Ensure it fits the full width of the calculator */
+    padding: 15px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 10px;
+    text-align: right;
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--text-color);
+    caret-color: transparent;
+    box-sizing: border-box; /* Ensure padding is included in width */
+  }
+  
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  
+  .btn {
+    padding: 20px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: var(--btn-bg);
+    color: var(--text-color);
+    transition: transform 0.2s, background-color 0.2s;
+  }
+  
+  .btn:hover {
+    transform: translateY(-5px);
+    background-color: var(--btn-hover-bg);
+  }
+  
+  .equals {
+    grid-column: span 2;
+    background-color: var(--btn-equals-bg);
+  }
+  
+  .equals:hover {
+    background-color: var(--btn-equals-hover);
+  }
+  
+  .zero {
+    grid-column: span 2;
+  }
+  
+  /* Dark Theme */
+  body.dark {
+    --bg-gradient: linear-gradient(135deg, #2E2E2E, #3D3D3D);
+    --btn-bg: rgba(255, 255, 255, 0.05);
+    --btn-hover-bg: rgba(255, 255, 255, 0.15);
+    --btn-equals-bg: #FF5722;
+    --btn-equals-hover: #FF7849;
+    --text-color: #fff;
+  }
+  
+  /* Light Theme */
+  body.light {
+    --bg-gradient: linear-gradient(135deg, #F0F0F0, #E0E0E0);
+    --btn-bg: rgba(0, 0, 0, 0.1);
+    --btn-hover-bg: rgba(0, 0, 0, 0.2);
+    --btn-equals-bg: #388E3C;
+    --btn-equals-hover: #4CAF50;
+    --text-color: #333;
+  }
+  
+  /* Blue Theme */
+  body.blue {
+    --bg-gradient: linear-gradient(135deg, #3A7BD5, #3A6073);
+    --btn-bg: rgba(255, 255, 255, 0.15);
+    --btn-hover-bg: rgba(255, 255, 255, 0.3);
+    --btn-equals-bg: #1E90FF;
+    --btn-equals-hover: #63B8FF;
+    --text-color: #fff;
+  }
+  
+  /* Pink Theme */
+  body.pink {
+    --bg-gradient: linear-gradient(135deg, #FF6A88, #FF5065);
+    --btn-bg: rgba(255, 255, 255, 0.15);
+    --btn-hover-bg: rgba(255, 255, 255, 0.3);
+    --btn-equals-bg: #FF1493;
+    --btn-equals-hover: #FF69B4;
+    --text-color: #fff;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    #display {
+      font-size: 1.5rem;
+      padding: 10px;
+    }
+  
+    .btn {
+      padding: 15px;
+      font-size: 1.2rem;
+    }
+  
+    .calculator {
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .btn {
+      padding: 12px;
+      font-size: 1rem;
+    }
+  
+    #display {
+      font-size: 1.2rem;
+      padding: 8px;
+    }
+  
+    .theme-toggle select {
+      font-size: 0.9rem;
+    }
+  
+    .calculator {
+      padding: 10px;
+    }
+  
+    .greeting-text {
+      font-size: 1.2rem;
+    }
+  }
+  
